@@ -49,7 +49,7 @@ l84~ すべて比較し終わり一致すると結果出力
 
 
 
-
+..
 ## 出力結果
 Force Search. Find keyword at:wind in my hair.
 BM Search. Find keyword at:wind in my hair.`
