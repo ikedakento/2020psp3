@@ -49,7 +49,7 @@ char* BMSearch(char text[], char key[])
 
     for(i= 0;i<256;i++)
     {
-        table[i] = 4;
+        table[i]=key_len+1;
     }
     for(i =0; i< key_len - 1; i++)
     {
