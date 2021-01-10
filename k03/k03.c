@@ -59,7 +59,8 @@ char* BMSearch(char text[], char key[])
 for(index = key_len -1;index<text_len;)
 {
     n = 0;
-    {
+    for(pos=key_len -1;pos>0;n++){
+    
         if(text[index - n]== key[pos])
         {
             pos--;
@@ -100,3 +101,5 @@ int main(void)
 
     return 0;
 }
+
+

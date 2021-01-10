@@ -128,6 +128,11 @@ if(left < right){
             arrayCity[j]=k;
             break;
         }
+        else{
+            k=arrayCity[i];
+            arrayCity[i]=arrayCity[j];
+            arrayCity[j]=k;
+        }
     }
     QuickSort(arrayCity,left,j-1);
     QuickSort(arrayCity,j+1,right);
