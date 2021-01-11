@@ -49,9 +49,9 @@ char* BMSearch(char text[], char key[])
 
     for(i= 0;i<256;i++)
     {
-        table[i] = 4;
+        table[i]=key_len;
     }
-    for(i =0; i< key_len - 1; i++)
+    for(i =0; i< key_len ; i++)
     {
         table[(unchar)key[i]] = key_len - i - 1;
 
@@ -59,8 +59,8 @@ char* BMSearch(char text[], char key[])
 for(index = key_len -1;index<text_len;)
 {
     n = 0;
-    for(pos=key_len - 1; pos > 0; n++)
-    {
+    for(pos=key_len -1;pos>0;n++){
+    
         if(text[index - n]== key[pos])
         {
             pos--;
@@ -101,3 +101,5 @@ int main(void)
 
     return 0;
 }
+
+
