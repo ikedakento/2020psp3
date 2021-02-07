@@ -72,10 +72,40 @@ void DynamicProgLimited(Menu arrayItem[], int items, int nap_size)
     int history[items+1][nap_size + 1];     //  履歴を保存するテーブル(選択したメニューを探すときに使用)
 
     //　ここを実装する
+    int i,x,y;
+    for(i = 0; i < items + 1; i++){
+        for(x = 0; x < nap_size + 1; x++){
+            nap_value[i][x] = 0;
 
+
+        }
+    
+    }
+
+    for(i = 1; i < items + 1; i++){
+        for(y = 1;  y< nap_size + 1; y++){
+            if(arrayItem[i - 1].price > y){
+                nap_value[i][y] = nap_value[i - 1][y];
+            }else{
+                break;
+            }
+        }
+
+        for(x = y; x < nap_size + 1; x++){
+            nap_value[i][x] = nap_value[i - 1][x - arrayItem[i -1].price] + arrayItem[i - 1].calorie;
+            
+            if(nap_value[i -1][x] >= nap_value[i][x]){
+                nap_value[i][x] = nap_value[i - 1][x];
+            }
+
+        } 
+    }
+
+    printf("%d\n",nap_value[items][nap_size]);
+
+    return;
 
 }
-
 
 int main(void)
 {
@@ -89,3 +119,9 @@ int main(void)
     DynamicProgLimited(arrayItem, cnt, NAP_SIZE);
     return 0;
 }
+
+
+
+
+
+
