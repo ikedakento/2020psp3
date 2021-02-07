@@ -117,8 +117,9 @@ int main(void)
 
     //  動的プログラムで最大摂取カロリーを求める
     DynamicProgLimited(arrayItem, cnt, NAP_SIZE);
-    return 0;
+    return 0 ;
 }
+
 
 
 
